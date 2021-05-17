@@ -5,6 +5,7 @@
 #include "LogMacros.h"
 
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 FABLE_NAMESPACE_BEGIN
 

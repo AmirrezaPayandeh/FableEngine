@@ -8,6 +8,8 @@
 
 #define SPDLOG_EOL ""
 
+#define BIT(x) (1 << x)
+
 #if FB_PLATFORM_WINDOWS
 	#if FB_BUILD_DLL
 		#define FABLE_API DLLEXPORT

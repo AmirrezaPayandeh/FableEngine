@@ -1,5 +1,6 @@
 #include "Application.h"
 
+#include "Events/ApplicationEvent.h"
 
 FABLE_NAMESPACE_BEGIN
 
