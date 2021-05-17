@@ -6,7 +6,6 @@
 #define FABLE_NAMESPACE_BEGIN namespace Fable {
 #define FABLE_NAMESPACE_END }
 
-#define SPDLOG_EOL ""
 
 #define BIT(x) (1 << x)
 

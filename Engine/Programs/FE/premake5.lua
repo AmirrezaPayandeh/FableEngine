@@ -6,6 +6,9 @@ project "FE"
 	targetdir ("%{wks.location}/Engine/Binaries/%{cfg.platform}")
 	objdir ("%{wks.location}/Engine/Intermediate/Build/%{cfg.platform}/%{prj.name}")
 
+	pchheader "FablePCH.h"
+	pchsource "%{wks.location}/Engine/Source/Fable/Core/FablePCH.cpp"
+
 	files
 	{
 		"%{wks.location}/Engine/**"
@@ -21,8 +24,12 @@ project "FE"
 
 	includedirs
 	{
+		--[[ ThirdParty includes ]]
 		"%{wks.location}/Engine/Source/ThirdParty/spdlog/include",
-		"%{wks.location}/Engine/Source/Fable"
+
+		--[[ Engine includes ]]
+		"%{wks.location}/Engine/Source/Fable",
+		"%{wks.location}/Engine/Source/Fable/Core"
 	}
 
 	filter "system:windows"

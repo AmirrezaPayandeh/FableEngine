@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 FABLE_NAMESPACE_BEGIN
 
 class FABLE_API MouseMoveEvent : public Event

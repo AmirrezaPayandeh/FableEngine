@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Core/Fable.h"
+#include <Core/Fable.h>
 
-class SandboxApp : public Fable::Application
+class SandboxApp : public Fable::ApplicationCore
 {
 public:
 	SandboxApp();

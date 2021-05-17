@@ -2,7 +2,7 @@
 
 #ifdef FB_PLATFORM_WINDOWS
 
-extern Fable::Application* Fable::CreateApplication();
+extern Fable::ApplicationCore* Fable::CreateApplication();
 
 int main(int argc, char** argv)
 {

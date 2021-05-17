@@ -8,7 +8,7 @@ SandboxApp::~SandboxApp()
 {
 }
 
-Fable::Application* Fable::CreateApplication()
+Fable::ApplicationCore* Fable::CreateApplication()
 {
 	return new SandboxApp();
 }

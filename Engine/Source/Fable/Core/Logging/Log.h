@@ -1,8 +1,6 @@
 #pragma once
 
-#include "Core/Core.h"
-#include "LogLevel.h"
-#include "LogMacros.h"
+#include "Core/CoreDefinitions.h"
 
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"

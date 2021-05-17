@@ -2,9 +2,6 @@
 
 #include "Core/Core.h"
 
-#include <string>
-#include <functional>
-
 FABLE_NAMESPACE_BEGIN
 
 // Events in Fable are currently blocking, meaning that when an event occurs
