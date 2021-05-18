@@ -4,7 +4,7 @@
 
 FABLE_NAMESPACE_BEGIN
 
-class FABLE_API MouseMoveEvent : public Event
+class CORE_API MouseMoveEvent : public Event
 {
 public:
 	MouseMoveEvent(float x, float y)
@@ -26,7 +26,7 @@ private:
 	float m_MouseX, m_MouseY;
 };
 
-class FABLE_API MouseScrolledEvent : public Event
+class CORE_API MouseScrolledEvent : public Event
 {
 public:
 	MouseScrolledEvent(float xOffset, float yOffset)
@@ -47,24 +47,24 @@ private:
 	float m_XOffset, m_YOffset;
 };
 
-class FABLE_API MouseButtonEvent : public Event
+class CORE_API MouseButtonEvent : public Event
 {
 public:
-	inline int GetMouseButton() const { return m_Button; }
+	inline int32 GetMouseButton() const { return m_Button; }
 
 	EVENT_CLASS_CATEGORY(EventCategoryMouseButton | EventCategoryMouse | EventCategoryInput)
 protected:
-	MouseButtonEvent(int button)
+	MouseButtonEvent(int32 button)
 		: m_Button(button) {}
 
-	int m_Button;
+	int32 m_Button;
 };
 
 
-class FABLE_API MousePressedEvent : public MouseButtonEvent
+class CORE_API MousePressedEvent : public MouseButtonEvent
 {
 public:
-	MousePressedEvent(int button)
+	MousePressedEvent(int32 button)
 		: MouseButtonEvent(button) {}
 
 	std::string ToString() const override
@@ -76,10 +76,10 @@ public:
 	EVENT_CLASS_TYPE(MouseButtonPressed)
 };
 
-class FABLE_API MouseReleasedEvent : public MouseButtonEvent
+class CORE_API MouseReleasedEvent : public MouseButtonEvent
 {
 public:
-	MouseReleasedEvent(int button)
+	MouseReleasedEvent(int32 button)
 		: MouseButtonEvent(button) {}
 
 	std::string ToString() const override

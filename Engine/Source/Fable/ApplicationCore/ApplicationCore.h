@@ -1,20 +1,20 @@
 #pragma once
 
 #include "Core/CoreMinimal.h"
-
-#ifndef FB_PLATFORM_WINDOWS
-	#error Fable only supports windows!
-#endif
+#include "GenericWindow/GenericWindow.h"
 
 FABLE_NAMESPACE_BEGIN
 
-class FABLE_API ApplicationCore
+class APPLICATIONCORE_API ApplicationCore
 {
 public:
 	ApplicationCore();
 	virtual ~ApplicationCore();
 
 	void Run();
+private:
+	std::unique_ptr<GenericWindow> m_Window;
+	bool m_Running = true;
 };
 
 // To be defined in CLIENT

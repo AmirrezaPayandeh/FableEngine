@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Platform/GenericPlatform.h"
+#include "GenericPlatform/GenericPlatform.h"
 
 //------------------------------------------------------------------
 // Global Types

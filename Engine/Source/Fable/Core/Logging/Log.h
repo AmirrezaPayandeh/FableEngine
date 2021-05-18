@@ -7,7 +7,7 @@
 
 FABLE_NAMESPACE_BEGIN
 
-class FABLE_API Log
+class CORE_API Log
 {
 public:
 	static void Init();

@@ -12,6 +12,7 @@ workspace "FableEngine"
 
 
 group "Programs"
+    include "Engine/Programs/GLFW"
     include "Engine/Programs/Sandbox"
 group ""
 

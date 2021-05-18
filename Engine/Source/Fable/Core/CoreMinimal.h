@@ -2,6 +2,7 @@
 
 #include "CoreTypes.h"
 #include "CoreDefinitions.h"
+#include "Asserts.h"
 
 //------------------------- Logging --------------------------------
 #include "Logging/Log.h"

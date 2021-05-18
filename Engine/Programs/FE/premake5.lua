@@ -26,10 +26,18 @@ project "FE"
 	{
 		--[[ ThirdParty includes ]]
 		"%{wks.location}/Engine/Source/ThirdParty/spdlog/include",
+		"%{wks.location}/Engine/Source/Programs/GLFW/include",
 
 		--[[ Engine includes ]]
 		"%{wks.location}/Engine/Source/Fable",
-		"%{wks.location}/Engine/Source/Fable/Core"
+		"%{wks.location}/Engine/Source/Fable/Core",
+		"%{wks.location}/Engine/Source/Fable/ApplicationCore"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

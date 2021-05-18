@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core/Core.h"
+#include "CoreMinimal.h"
 
 FABLE_NAMESPACE_BEGIN
 
@@ -31,15 +31,15 @@ enum EventCategory
                                virtual EventType GetEventType() const override { return GetStaticType(); } \
                                virtual const char* GetName() const override { return #type; }
 
-#define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const { return category; }
+#define EVENT_CLASS_CATEGORY(category) virtual int32 GetCategoryFlags() const { return category; }
 
-class FABLE_API Event
+class CORE_API Event
 {
 	friend class EventDispather;
 public:
 	virtual EventType GetEventType() const = 0;
 	virtual const char* GetName() const = 0;
-	virtual int GetCategoryFlags() const = 0;
+	virtual int32 GetCategoryFlags() const = 0;
 	virtual std::string ToString() const { return GetName(); }
 
 	inline bool IsInCategory(EventCategory category)

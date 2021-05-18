@@ -4,26 +4,26 @@
 
 FABLE_NAMESPACE_BEGIN
 
-class FABLE_API KeyEvent : public Event
+class CORE_API KeyEvent : public Event
 {
 public:
-	inline int GetKeyCode() const { return m_KeyCode; }
+	inline int32 GetKeyCode() const { return m_KeyCode; }
 
 	EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 protected:
-	KeyEvent(int keycode)
+	KeyEvent(int32 keycode)
 		: m_KeyCode(keycode) {}
 
-	int m_KeyCode;
+	int32 m_KeyCode;
 };
 
-class FABLE_API KeyPressedEvent : public KeyEvent
+class CORE_API KeyPressedEvent : public KeyEvent
 {
 public:
-	KeyPressedEvent(int keycode, int repeatCount)
+	KeyPressedEvent(int32 keycode, int32 repeatCount)
 		: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
-	inline int GetRepeatCount() const { return m_RepeatCount; }
+	inline int32 GetRepeatCount() const { return m_RepeatCount; }
 
 	std::string ToString() const override
 	{
@@ -34,13 +34,13 @@ public:
 
 	EVENT_CLASS_TYPE(KeyPressed)
 private:
-	int m_RepeatCount;
+	int32 m_RepeatCount;
 };
 
-class FABLE_API KeyReleasedEvent : public KeyEvent
+class CORE_API KeyReleasedEvent : public KeyEvent
 {
 public:
-	KeyReleasedEvent(int keycode)
+	KeyReleasedEvent(int32 keycode)
 		: KeyEvent(keycode)
 	{
 	}

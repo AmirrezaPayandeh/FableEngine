@@ -8,7 +8,7 @@ project "Sandbox"
 
 	files
 	{
-		"%{wks.location}/Engine/Source/Programs/**"
+		"%{wks.location}/Engine/Source/Programs/Sandbox/**"
 	}
 
 	includedirs
