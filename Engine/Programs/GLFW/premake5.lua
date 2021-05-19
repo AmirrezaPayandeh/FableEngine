@@ -1,22 +1,22 @@
 project "GLFW"
-	location "%{wks.location}/Engine/Intermediate/ProjectFiles"
+	location (ProjectsLocation)
 	kind "StaticLib"
 	language "C"
 
-	targetdir ("%{wks.location}/Engine/Binaries/%{cfg.platform}")
-	objdir ("%{wks.location}/Engine/Intermediate/Build/%{cfg.platform}/%{prj.name}")
+	targetdir (TargetDir)
+	objdir (ObjDir)
 
 	files
 	{
-		"%{wks.location}/Engine/Source/Programs/GLFW/include/GLFW/glfw3.h",
-		"%{wks.location}/Engine/Source/Programs/GLFW/include/GLFW/glfw3native.h",
-		"%{wks.location}/Engine/Source/Programs/GLFW/src/glfw_config.h",
-		"%{wks.location}/Engine/Source/Programs/GLFW/src/context.c",
-		"%{wks.location}/Engine/Source/Programs/GLFW/src/init.c",
-		"%{wks.location}/Engine/Source/Programs/GLFW/src/input.c",
-		"%{wks.location}/Engine/Source/Programs/GLFW/src/monitor.c",
-		"%{wks.location}/Engine/Source/Programs/GLFW/src/vulkan.c",
-		"%{wks.location}/Engine/Source/Programs/GLFW/src/window.c"
+		ProgramsSourceDir .. "GLFW/include/GLFW/glfw3.h",
+		ProgramsSourceDir .. "GLFW/include/GLFW/glfw3native.h",
+		ProgramsSourceDir .. "GLFW/src/glfw_config.h",
+		ProgramsSourceDir .. "GLFW/src/context.c",
+		ProgramsSourceDir .. "GLFW/src/init.c",
+		ProgramsSourceDir .. "GLFW/src/input.c",
+		ProgramsSourceDir .. "GLFW/src/monitor.c",
+		ProgramsSourceDir .. "GLFW/src/vulkan.c",
+		ProgramsSourceDir .. "GLFW/src/window.c"
 	}
 
 	filter "system:windows"
@@ -25,15 +25,15 @@ project "GLFW"
 
 		files
 		{
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/win32_init.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/win32_joystick.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/win32_monitor.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/win32_time.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/win32_thread.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/win32_window.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/wgl_context.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/egl_context.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/osmesa_context.c"
+			ProgramsSourceDir .. "GLFW/src/win32_init.c",
+			ProgramsSourceDir .. "GLFW/src/win32_joystick.c",
+			ProgramsSourceDir .. "GLFW/src/win32_monitor.c",
+			ProgramsSourceDir .. "GLFW/src/win32_time.c",
+			ProgramsSourceDir .. "GLFW/src/win32_thread.c",
+			ProgramsSourceDir .. "GLFW/src/win32_window.c",
+			ProgramsSourceDir .. "GLFW/src/wgl_context.c",
+			ProgramsSourceDir .. "GLFW/src/egl_context.c",
+			ProgramsSourceDir .. "GLFW/src/osmesa_context.c"
 		}
 
 		defines 
@@ -49,16 +49,16 @@ project "GLFW"
 		
 		files
 		{
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/x11_init.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/x11_monitor.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/x11_window.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/xkb_unicode.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/posix_time.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/posix_thread.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/glx_context.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/egl_context.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/osmesa_context.c",
-			"%{wks.location}/Engine/Source/Programs/GLFW/src/linux_joystick.c"
+			ProgramsSourceDir .. "GLFW/src/x11_init.c",
+			ProgramsSourceDir .. "GLFW/src/x11_monitor.c",
+			ProgramsSourceDir .. "GLFW/src/x11_window.c",
+			ProgramsSourceDir .. "GLFW/src/xkb_unicode.c",
+			ProgramsSourceDir .. "GLFW/src/posix_time.c",
+			ProgramsSourceDir .. "GLFW/src/posix_thread.c",
+			ProgramsSourceDir .. "GLFW/src/glx_context.c",
+			ProgramsSourceDir .. "GLFW/src/egl_context.c",
+			ProgramsSourceDir .. "GLFW/src/osmesa_context.c",
+			ProgramsSourceDir .. "GLFW/src/linux_joystick.c"
 		}
 
 		defines

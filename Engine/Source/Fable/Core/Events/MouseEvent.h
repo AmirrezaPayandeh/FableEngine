@@ -39,6 +39,7 @@ public:
 	{
 		std::stringstream ss;
 		ss << "MouseScrolledEvent: " << m_XOffset << ", " << m_YOffset;
+		return ss.str();
 	}
 
 	EVENT_CLASS_TYPE(MouseScrolled)
@@ -60,32 +61,33 @@ protected:
 	int32 m_Button;
 };
 
-
-class CORE_API MousePressedEvent : public MouseButtonEvent
+class CORE_API MouseButtonPressedEvent : public MouseButtonEvent
 {
 public:
-	MousePressedEvent(int32 button)
+	MouseButtonPressedEvent(int32 button)
 		: MouseButtonEvent(button) {}
 
 	std::string ToString() const override
 	{
 		std::stringstream ss;
 		ss << "MouseButtonPressedEvent: " << m_Button;
+		return ss.str();
 	}
 
 	EVENT_CLASS_TYPE(MouseButtonPressed)
 };
 
-class CORE_API MouseReleasedEvent : public MouseButtonEvent
+class CORE_API MouseButtonReleasedEvent : public MouseButtonEvent
 {
 public:
-	MouseReleasedEvent(int32 button)
+	MouseButtonReleasedEvent(int32 button)
 		: MouseButtonEvent(button) {}
 
 	std::string ToString() const override
 	{
 		std::stringstream ss;
-		ss << "MouseButtonPressedEvent: " << m_Button;
+		ss << "MouseButtonReleasedEvent: " << m_Button;
+		return ss.str();
 	}
 
 	EVENT_CLASS_TYPE(MouseButtonPressed)

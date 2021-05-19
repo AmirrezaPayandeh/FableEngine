@@ -1,20 +1,20 @@
 project "Sandbox"
-	location "%{wks.location}/Engine/Intermediate/ProjectFiles"
+	location (ProjectsLocation)
 	kind "ConsoleApp"
 	language "C++"
 
-	targetdir ("%{wks.location}/Engine/Binaries/%{cfg.platform}")
-	objdir ("%{wks.location}/Engine/Intermediate/Build/%{cfg.platform}/%{prj.name}")
+	targetdir (TargetDir)
+	objdir (ObjDir)
 
 	files
 	{
-		"%{wks.location}/Engine/Source/Programs/Sandbox/**"
+		ProgramsSourceDir .. "Sandbox/**"
 	}
 
 	includedirs
 	{
-		"%{wks.location}/Engine/Source/ThirdParty/spdlog/include",
-		"%{wks.location}/Engine/Source/Fable"
+		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.Fable}"
 	}
 
 	links

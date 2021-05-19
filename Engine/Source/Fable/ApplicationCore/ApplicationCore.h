@@ -2,6 +2,7 @@
 
 #include "Core/CoreMinimal.h"
 #include "GenericWindow/GenericWindow.h"
+#include "Events/ApplicationEvent.h"
 
 FABLE_NAMESPACE_BEGIN
 
@@ -12,7 +13,11 @@ public:
 	virtual ~ApplicationCore();
 
 	void Run();
+
+	void OnEvent(Event& e);
 private:
+	bool OnWindowClosed(WindowCloseEvent& e);
+
 	std::unique_ptr<GenericWindow> m_Window;
 	bool m_Running = true;
 };

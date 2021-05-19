@@ -1,37 +1,37 @@
 project "FE"
-	location "%{wks.location}/Engine/Intermediate/ProjectFiles"
+	location (ProjectsLocation)
 	kind "SharedLib"
 	language "C++"
 
-	targetdir ("%{wks.location}/Engine/Binaries/%{cfg.platform}")
-	objdir ("%{wks.location}/Engine/Intermediate/Build/%{cfg.platform}/%{prj.name}")
+	targetdir (TargetDir)
+	objdir (ObjDir)
 
 	pchheader "FablePCH.h"
-	pchsource "%{wks.location}/Engine/Source/Fable/Core/FablePCH.cpp"
+	pchsource (SourceDir .. "Fable/Core/FablePCH.cpp")
 
 	files
 	{
-		"%{wks.location}/Engine/**"
+		EngineDir .. "**" -- includes Source and Shaders
 	}
 
 	excludes
 	{
-		"%{wks.location}/Engine/Source/Programs/**",
-		"%{wks.location}/Engine/Binaries/**",
-		"%{wks.location}/Engine/Intermediate/**",
-		"%{wks.location}/Engine/Extras/**"
+		ProgramsSourceDir .. "**",
+		BinariesDir .. "**",
+		IntermediateDir .. "**",
+		ExtrasDir .. "**"
 	}
 
 	includedirs
 	{
 		--[[ ThirdParty includes ]]
-		"%{wks.location}/Engine/Source/ThirdParty/spdlog/include",
-		"%{wks.location}/Engine/Source/Programs/GLFW/include",
+		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.GLFW}",
 
 		--[[ Engine includes ]]
-		"%{wks.location}/Engine/Source/Fable",
-		"%{wks.location}/Engine/Source/Fable/Core",
-		"%{wks.location}/Engine/Source/Fable/ApplicationCore"
+		"%{IncludeDir.Fable}",
+		"%{IncludeDir.FableCore}",
+		"%{IncludeDir.FableApplicationCore}"
 	}
 
 	links
