@@ -53,6 +53,7 @@ project "FE"
 
 	filter "configurations:Debug"
 		symbols "On"
+		buildoptions "/MDd"
 		defines
 		{
 			"FB_DEBUG"
@@ -60,6 +61,7 @@ project "FE"
 
 	filter "configurations:Release"
 		optimize "On"
+		buildoptions "/MD"
 		defines
 		{
 			"FB_RELEASE"
@@ -67,6 +69,7 @@ project "FE"
 
 	filter "configurations:Distribution"
 		optimize "On"
+		buildoptions "/MD"
 		defines
 		{
 			"FB_DIST"

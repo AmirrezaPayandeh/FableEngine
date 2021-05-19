@@ -19,6 +19,9 @@ void ApplicationCore::Run()
 {
 	while (m_Running)
 	{
+		for (Layer* layer : m_LayerStack)
+			layer->OnUpdate();
+
 		m_Window->OnUpdate();
 	}
 }
@@ -29,6 +32,23 @@ void ApplicationCore::OnEvent(Event& e)
 	dispather.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClosed));
 
 	FB_LOG(Engine, Trace, "{0}", e);
+
+	for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
+	{
+		(*--it)->OnEvent(e);
+		if (e.IsHandled())
+			break;
+	}
+}
+
+void ApplicationCore::PushLayer(Layer* layer)
+{
+	m_LayerStack.PushLayer(layer);
+}
+
+void ApplicationCore::PushOverlay(Layer* overlay)
+{
+	m_LayerStack.PopOverlay(overlay);
 }
 
 bool ApplicationCore::OnWindowClosed(WindowCloseEvent& e)
