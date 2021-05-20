@@ -17,6 +17,7 @@ SolutionDir = "%{wks.location}/"
 EngineDir = SolutionDir .. "Engine/"
 SourceDir = EngineDir .. "Source/"
 ProgramsSourceDir = SourceDir .. "Programs/"
+ThirdPartySourceDir = SourceDir .. "ThirdParty/"
 
 ProjectsLocation = EngineDir .. "Intermediate/ProjectFiles"
 
@@ -27,18 +28,23 @@ ExtrasDir = EngineDir .. "/Extras/"
 TargetDir = BinariesDir .. Platform
 ObjDir = IntermediateDir .. "Build/" .. Platform .. "/" .. ProjectName
 
--- [[ Include Directories ]]
+---------------------------- [[ Include Directories ]] ----------------------------
 IncludeDir = {}
-IncludeDir["spdlog"] = SourceDir .. "ThirdParty/spdlog/include/"
-IncludeDir["GLFW"] = ProgramsSourceDir .. "GLFW/include/"
 
+-- Third Parties
+IncludeDir["spdlog"] = ThirdPartySourceDir .. "spdlog/include/"
+IncludeDir["GLFW"] = ProgramsSourceDir .. "GLFW/include/"
+IncludeDir["Glad"] = ProgramsSourceDir .. "Glad/include/"
+
+-- Engine
 IncludeDir["Fable"] = SourceDir .. "Fable/"
 IncludeDir["FableCore"] = SourceDir .. "Fable/Core/"
 IncludeDir["FableApplicationCore"] = SourceDir .. "Fable/ApplicationCore/"
 
 
 group "Programs"
-    include "Engine/Programs/GLFW/"
+	include "Engine/Programs/GLFW/"
+	include "Engine/Programs/Glad/"
     include "Engine/Programs/Sandbox/"
 group ""
 

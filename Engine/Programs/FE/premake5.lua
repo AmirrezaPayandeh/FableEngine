@@ -27,6 +27,7 @@ project "FE"
 		--[[ ThirdParty includes ]]
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
 
 		--[[ Engine includes ]]
 		"%{IncludeDir.Fable}",
@@ -37,6 +38,7 @@ project "FE"
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -48,7 +50,8 @@ project "FE"
 		defines
 		{
 			"FB_PLATFORM_WINDOWS",
-			"FB_BUILD_DLL"
+			"FB_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 	filter "configurations:Debug"
