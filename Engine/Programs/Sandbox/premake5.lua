@@ -2,6 +2,7 @@ project "Sandbox"
 	location (ProjectsLocation)
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir (TargetDir)
 	objdir (ObjDir)
