@@ -12,7 +12,7 @@ project "Glad"
 		ProgramsSourceDir .. "Glad/include/KHR/khrplatform.h",
 		ProgramsSourceDir .. "Glad/src/Glad.c"
 	}
-
+	
 	includedirs
 	{
 		"%{IncludeDir.Glad}"

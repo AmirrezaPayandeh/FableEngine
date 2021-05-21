@@ -2,6 +2,7 @@ project "FE"
 	location (ProjectsLocation)
 	kind "SharedLib"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir (TargetDir)
 	objdir (ObjDir)
@@ -28,6 +29,7 @@ project "FE"
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}",
 
 		--[[ Engine includes ]]
 		"%{IncludeDir.Fable}",
@@ -39,12 +41,12 @@ project "FE"
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -56,7 +58,7 @@ project "FE"
 
 	filter "configurations:Debug"
 		symbols "On"
-		buildoptions "/MDd"
+		runtime "Debug"
 		defines
 		{
 			"FB_DEBUG"
@@ -64,7 +66,7 @@ project "FE"
 
 	filter "configurations:Release"
 		optimize "On"
-		buildoptions "/MD"
+		runtime "Release"
 		defines
 		{
 			"FB_RELEASE"
@@ -72,7 +74,7 @@ project "FE"
 
 	filter "configurations:Distribution"
 		optimize "On"
-		buildoptions "/MD"
+		runtime "Release"
 		defines
 		{
 			"FB_DIST"

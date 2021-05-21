@@ -34,7 +34,7 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		symbols "On"
-		buildoptions "/MDd"
+		runtime "Debug"
 		defines
 		{
 			"FB_DEBUG"
@@ -42,7 +42,7 @@ project "Sandbox"
 
 	filter "configurations:Release"
 		optimize "On"
-		buildoptions "/MD"
+		runtime "Release"
 		defines
 		{
 			"FB_RELEASE"
@@ -50,7 +50,7 @@ project "Sandbox"
 
 	filter "configurations:Distribution"
 		optimize "On"
-		buildoptions "/MD"
+		runtime "Release"
 		defines
 		{
 			"FB_DIST"

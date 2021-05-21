@@ -19,7 +19,11 @@ public:
 
 	void PushLayer(Layer* layer);
 	void PushOverlay(Layer* overlay);
+
+	inline static ApplicationCore& Get() { return *s_Instance; }
+	inline GenericWindow& GetWindow() const { return *m_Window; }
 private:
+	static ApplicationCore* s_Instance;
 	bool OnWindowClosed(WindowCloseEvent& e);
 
 	std::unique_ptr<GenericWindow> m_Window;

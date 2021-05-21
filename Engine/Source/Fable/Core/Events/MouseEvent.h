@@ -4,10 +4,10 @@
 
 FABLE_NAMESPACE_BEGIN
 
-class CORE_API MouseMoveEvent : public Event
+class CORE_API MouseMovedEvent : public Event
 {
 public:
-	MouseMoveEvent(float x, float y)
+	MouseMovedEvent(float x, float y)
 		: m_MouseX(x), m_MouseY(y) {}
 
 	inline float GetX() const { return m_MouseX; }
@@ -90,7 +90,7 @@ public:
 		return ss.str();
 	}
 
-	EVENT_CLASS_TYPE(MouseButtonPressed)
+	EVENT_CLASS_TYPE(MouseButtonReleased)
 };
 
 FABLE_NAMESPACE_END

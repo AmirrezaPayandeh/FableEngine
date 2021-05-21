@@ -10,18 +10,19 @@ public:
 
 	void OnUpdate() override
 	{
-		FB_LOG(App, Info, "ExampleLayer::Update");
+		//FB_LOG(App, Info, "ExampleLayer::Update");
 	}
 
 	void OnEvent(Fable::Event& event) override
 	{
-		FB_LOG(App, Trace, "{0}", event);
+		//FB_LOG(App, Trace, "{0}", event);
 	}
 };
 
 SandboxApp::SandboxApp()
 {
 	PushLayer(new ExampleLayer());
+	PushOverlay(new Fable::ImGuiLayer());
 }
 
 SandboxApp::~SandboxApp()

@@ -9,15 +9,19 @@
 
 #define BIT(x) (1 << x)
 
+#define BIND_EVENT_FN(Func) std::bind(&Func, this, std::placeholders::_1)
+
 
 #if FB_BUILD_DLL
 	#define FABLE_API DLLEXPORT
 	#define CORE_API DLLEXPORT
 	#define APPLICATIONCORE_API DLLEXPORT
+	#define IMGUI_API DLLEXPORT
 #else
 	#define FABLE_API DLLIMPORT
 	#define CORE_API DLLIMPORT
 	#define APPLICATIONCORE_API DLLIMPORT
+	#define IMGUI_API DLLIMPORT
 #endif
 
 

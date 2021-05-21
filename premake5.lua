@@ -35,6 +35,7 @@ IncludeDir = {}
 IncludeDir["spdlog"] = ThirdPartySourceDir .. "spdlog/include/"
 IncludeDir["GLFW"] = ProgramsSourceDir .. "GLFW/include/"
 IncludeDir["Glad"] = ProgramsSourceDir .. "Glad/include/"
+IncludeDir["ImGui"] = ProgramsSourceDir .. "ImGui/"
 
 -- Engine
 IncludeDir["Fable"] = SourceDir .. "Fable/"
@@ -44,6 +45,7 @@ IncludeDir["FableApplicationCore"] = SourceDir .. "Fable/ApplicationCore/"
 
 group "Programs"
 	include "Engine/Programs/GLFW/"
+	include "Engine/Programs/ImGui/"
 	include "Engine/Programs/Glad/"
     include "Engine/Programs/Sandbox/"
 group ""
