@@ -21,22 +21,22 @@ public:
 		switch (level)
 		{
 		case LogLevel::Fatal:
-			::Fable::Log::GetLogger()->critical(fmt, args...);
+			GetLogger()->critical(fmt, args...);
 			break;
 		case LogLevel::Error:
-			::Fable::Log::GetLogger()->error(fmt, args...);
+			GetLogger()->error(fmt, args...);
 			break;
 		case LogLevel::Warn:
-			::Fable::Log::GetLogger()->warn(fmt, args...);
+			GetLogger()->warn(fmt, args...);
 			break;
 		case LogLevel::Info:
-			::Fable::Log::GetLogger()->info(fmt, args...);
+			GetLogger()->info(fmt, args...);
 			break;
 		case LogLevel::Trace:
-			::Fable::Log::GetLogger()->trace(fmt, args...);
+			GetLogger()->trace(fmt, args...);
 			break;
 		case LogLevel::All:
-			::Fable::Log::GetLogger()->trace(fmt, args...);
+			GetLogger()->trace(fmt, args...);
 			break;
 		default:
 			break;

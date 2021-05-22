@@ -15,6 +15,7 @@ project "Sandbox"
 	includedirs
 	{
 		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.glm}",
 		"%{IncludeDir.Fable}",
 		"%{IncludeDir.FableCore}"
 	}
@@ -26,7 +27,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -35,24 +35,24 @@ project "Sandbox"
 		}
 
 	filter "configurations:Debug"
-		symbols "On"
 		runtime "Debug"
+		symbols "On"
 		defines
 		{
 			"FB_DEBUG"
 		}
 
 	filter "configurations:Release"
-		optimize "On"
 		runtime "Release"
+		optimize "On"
 		defines
 		{
 			"FB_RELEASE"
 		}
 
 	filter "configurations:Distribution"
-		optimize "On"
 		runtime "Release"
+		optimize "On"
 		defines
 		{
 			"FB_DIST"

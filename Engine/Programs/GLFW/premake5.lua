@@ -2,6 +2,7 @@ project "GLFW"
 	location (ProjectsLocation)
 	kind "StaticLib"
 	language "C"
+	staticruntime "On"
 
 	targetdir (TargetDir)
 	objdir (ObjDir)
@@ -21,7 +22,6 @@ project "GLFW"
 
 	filter "system:windows"
 		systemversion "latest"
-		staticruntime "On"
 
 		files
 		{
@@ -44,7 +44,6 @@ project "GLFW"
 
 	filter "system:linux"
 		pic "On"
-
 		systemversion "latest"
 		
 		files
@@ -78,6 +77,3 @@ project "GLFW"
 	filter "configurations:Distribution"
 		runtime "Release"
 		optimize "on"
-
-	filter { "system:windows", "configurations:Release" }
-		buildoptions "/MT"

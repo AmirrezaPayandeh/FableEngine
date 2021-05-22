@@ -28,11 +28,13 @@ ExtrasDir = EngineDir .. "/Extras/"
 TargetDir = BinariesDir .. Platform
 ObjDir = IntermediateDir .. "Build/" .. Platform .. "/" .. ProjectName
 
+
 ---------------------------- [[ Include Directories ]] ----------------------------
 IncludeDir = {}
 
 -- Third Parties
 IncludeDir["spdlog"] = ThirdPartySourceDir .. "spdlog/include"
+IncludeDir["glm"] = ThirdPartySourceDir .. "glm"
 IncludeDir["GLFW"] = ProgramsSourceDir .. "GLFW/include"
 IncludeDir["Glad"] = ProgramsSourceDir .. "Glad/include"
 IncludeDir["ImGui"] = ProgramsSourceDir .. "ImGui"

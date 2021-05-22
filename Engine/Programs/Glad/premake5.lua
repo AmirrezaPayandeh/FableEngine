@@ -2,6 +2,7 @@ project "Glad"
 	location (ProjectsLocation)
 	kind "StaticLib"
 	language "C"
+	staticruntime "On"
 
 	targetdir (TargetDir)
 	objdir (ObjDir)

@@ -20,13 +20,17 @@ project "FE"
 		ProgramsSourceDir .. "**",
 		BinariesDir .. "**",
 		IntermediateDir .. "**",
-		ExtrasDir .. "**"
+		ExtrasDir .. "**",
+
+		ThirdPartySourceDir .. "**.c",
+		ThirdPartySourceDir .. "**.cpp"
 	}
 
 	includedirs
 	{
 		-- [[ ThirdParty includes ]]
 		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.glm}",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
@@ -34,12 +38,12 @@ project "FE"
 		-- [[ Engine includes ]]
 		"%{IncludeDir.Fable}",
 		"%{IncludeDir.FableCore}",
-		"%{IncludeDir.FableCore}/Events/",
-		"%{IncludeDir.FableCore}/GenericPlatform/",
-		"%{IncludeDir.FableCore}/Input/",
-		"%{IncludeDir.FableCore}/Layer/",
-		"%{IncludeDir.FableCore}/Logging/",
-		"%{IncludeDir.FableCore}/Misc/",
+		"%{IncludeDir.FableCore}/Events",
+		"%{IncludeDir.FableCore}/GenericPlatform",
+		"%{IncludeDir.FableCore}/Input",
+		"%{IncludeDir.FableCore}/Layer",
+		"%{IncludeDir.FableCore}/Logging",
+		"%{IncludeDir.FableCore}/Misc",
 
 		"%{IncludeDir.FableApplicationCore}",
 		"%{IncludeDir.FableApplicationCore}/GenericWindow",
@@ -69,24 +73,24 @@ project "FE"
 		}
 
 	filter "configurations:Debug"
-		symbols "On"
 		runtime "Debug"
+		symbols "On"
 		defines
 		{
 			"FB_DEBUG"
 		}
 
 	filter "configurations:Release"
-		optimize "On"
 		runtime "Release"
+		optimize "On"
 		defines
 		{
 			"FB_RELEASE"
 		}
 
 	filter "configurations:Distribution"
-		optimize "On"
 		runtime "Release"
+		optimize "On"
 		defines
 		{
 			"FB_DIST"

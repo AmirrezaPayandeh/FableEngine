@@ -14,7 +14,7 @@ ApplicationCore::ApplicationCore()
 	s_Instance = this;
 
 	m_Window = std::unique_ptr<GenericWindow>(GenericWindow::Create());
-	m_Window->SetEventCallBack(BIND_EVENT_FN(ApplicationCore::OnEvent));
+	m_Window->SetEventCallback(BIND_EVENT_FN(ApplicationCore::OnEvent));
 }
 
 ApplicationCore::~ApplicationCore()

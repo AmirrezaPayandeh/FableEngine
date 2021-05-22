@@ -2,7 +2,7 @@ project "ImGui"
 	location (ProjectsLocation)
 	kind "StaticLib"
 	language "C++"
-    staticruntime "off"
+    staticruntime "On"
 
 	targetdir (TargetDir)
 	objdir (ObjDir)
