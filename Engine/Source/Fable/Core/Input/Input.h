@@ -1,6 +1,7 @@
 #pragma once
 
-#include "CoreDefinitions.h"
+#include "CoreMinimal.h"
+#include "FablePCH.h"
 
 FABLE_NAMESPACE_BEGIN
 

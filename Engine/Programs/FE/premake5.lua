@@ -8,7 +8,7 @@ project "FE"
 	objdir (ObjDir)
 
 	pchheader "FablePCH.h"
-	pchsource (SourceDir .. "Fable/Core/FablePCH.cpp")
+	pchsource (SourceDir .. "Fable/Core/Misc/FablePCH.cpp")
 
 	files
 	{
@@ -25,16 +25,28 @@ project "FE"
 
 	includedirs
 	{
-		--[[ ThirdParty includes ]]
+		-- [[ ThirdParty includes ]]
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 
-		--[[ Engine includes ]]
+		-- [[ Engine includes ]]
 		"%{IncludeDir.Fable}",
 		"%{IncludeDir.FableCore}",
-		"%{IncludeDir.FableApplicationCore}"
+		"%{IncludeDir.FableCore}/Events/",
+		"%{IncludeDir.FableCore}/GenericPlatform/",
+		"%{IncludeDir.FableCore}/Input/",
+		"%{IncludeDir.FableCore}/Layer/",
+		"%{IncludeDir.FableCore}/Logging/",
+		"%{IncludeDir.FableCore}/Misc/",
+
+		"%{IncludeDir.FableApplicationCore}",
+		"%{IncludeDir.FableApplicationCore}/GenericWindow",
+		"%{IncludeDir.FableApplicationCore}/OpenGL",
+		"%{IncludeDir.FableApplicationCore}/Windows",
+
+		"%{IncludeDir.FableImGui}"
 	}
 
 	links

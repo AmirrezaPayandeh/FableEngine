@@ -1,10 +1,11 @@
 #include "FablePCH.h"
 #include "WindowsWindow.h"
 
-#include "Events/ApplicationEvent.h"
-#include "Events/MouseEvent.h"
-#include "Events/KeyEvent.h"
+#include "Core/Events/ApplicationEvent.h"
+#include "Core/Events/MouseEvent.h"
+#include "Core/Events/KeyEvent.h"
 
+// TEMPORARY
 #include <Glad/glad.h>
 
 FABLE_NAMESPACE_BEGIN

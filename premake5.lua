@@ -32,15 +32,16 @@ ObjDir = IntermediateDir .. "Build/" .. Platform .. "/" .. ProjectName
 IncludeDir = {}
 
 -- Third Parties
-IncludeDir["spdlog"] = ThirdPartySourceDir .. "spdlog/include/"
-IncludeDir["GLFW"] = ProgramsSourceDir .. "GLFW/include/"
-IncludeDir["Glad"] = ProgramsSourceDir .. "Glad/include/"
-IncludeDir["ImGui"] = ProgramsSourceDir .. "ImGui/"
+IncludeDir["spdlog"] = ThirdPartySourceDir .. "spdlog/include"
+IncludeDir["GLFW"] = ProgramsSourceDir .. "GLFW/include"
+IncludeDir["Glad"] = ProgramsSourceDir .. "Glad/include"
+IncludeDir["ImGui"] = ProgramsSourceDir .. "ImGui"
 
 -- Engine
-IncludeDir["Fable"] = SourceDir .. "Fable/"
-IncludeDir["FableCore"] = SourceDir .. "Fable/Core/"
-IncludeDir["FableApplicationCore"] = SourceDir .. "Fable/ApplicationCore/"
+IncludeDir["Fable"] = SourceDir .. "Fable"
+IncludeDir["FableCore"] = SourceDir .. "Fable/Core"
+IncludeDir["FableApplicationCore"] = SourceDir .. "Fable/ApplicationCore"
+IncludeDir["FableImGui"] = SourceDir .. "Fable/ImGui"
 
 
 group "Programs"

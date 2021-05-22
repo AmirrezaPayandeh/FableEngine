@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Core/Fable.h>
+#include <Core/Misc/Fable.h>
 
 class SandboxApp : public Fable::ApplicationCore
 {

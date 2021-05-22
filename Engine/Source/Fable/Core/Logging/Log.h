@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CoreDefinitions.h"
+#include "Misc/CoreDefinitions.h"
 #include "LogLevel.h"
 
 #include "spdlog/spdlog.h"

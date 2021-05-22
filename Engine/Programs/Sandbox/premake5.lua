@@ -15,7 +15,8 @@ project "Sandbox"
 	includedirs
 	{
 		"%{IncludeDir.spdlog}",
-		"%{IncludeDir.Fable}"
+		"%{IncludeDir.Fable}",
+		"%{IncludeDir.FableCore}"
 	}
 
 	links

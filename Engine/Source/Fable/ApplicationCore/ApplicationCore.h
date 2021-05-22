@@ -1,9 +1,10 @@
 #pragma once
 
+#include "GenericWindow/GenericWindow.h"
+
 #include "Core/CoreMinimal.h"
 #include "Core/Layer/LayerStack.h"
 #include "Core/Events/ApplicationEvent.h"
-#include "ApplicationCore/GenericWindow/GenericWindow.h"
 
 FABLE_NAMESPACE_BEGIN
 

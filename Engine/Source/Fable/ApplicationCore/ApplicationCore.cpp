@@ -39,8 +39,6 @@ void ApplicationCore::OnEvent(Event& event)
 	EventDispather dispather(event);
 	dispather.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(ApplicationCore::OnWindowClosed));
 
-	FB_LOG(Engine, Trace, "{0}", event);
-	
 	for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 	{
 		(*--it)->OnEvent(event);

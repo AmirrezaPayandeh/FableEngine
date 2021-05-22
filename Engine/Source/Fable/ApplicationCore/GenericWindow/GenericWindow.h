@@ -1,7 +1,7 @@
 #pragma once
 
-#include "CoreMinimal.h"
-#include "Events/Event.h"
+#include "Core/CoreMinimal.h"
+#include "Core/Events/Event.h"
 
 FABLE_NAMESPACE_BEGIN
 

@@ -2,9 +2,7 @@
 
 #include "GenericPlatform/GenericPlatform.h"
 
-//------------------------------------------------------------------
-// Global Types
-//------------------------------------------------------------------
+/** Global Types */
 
 //~ Unsigned base types.
 /// An 8-bit unsigned integer.
