@@ -50,14 +50,14 @@ void ImGuiLayer::OnAttach()
     GLFWwindow* window = static_cast<GLFWwindow*>(app.GetWindow().GetNativeWindow());
 
     // Setup Platform/Renderer backends
-    ImGui_ImplGlfw_InitForOpenGL(window, true); // **********
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 410");
 }
 
 void ImGuiLayer::OnDetach()
 {
     ImGui_ImplOpenGL3_Shutdown();
-    ImGui_ImplGlfw_Shutdown(); // **********
+    ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
 }
 
@@ -70,7 +70,7 @@ void ImGuiLayer::OnImGuiRender()
 void ImGuiLayer::Begin()
 {
     ImGui_ImplOpenGL3_NewFrame();
-    ImGui_ImplGlfw_NewFrame(); // **********
+    ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 }
 
@@ -78,7 +78,7 @@ void ImGuiLayer::End()
 {
     ImGuiIO& io = ImGui::GetIO();
     ApplicationCore& app = ApplicationCore::Get();
-    io.DisplaySize = ImVec2(app.GetWindow().GetWidth(), app.GetWindow().GetHeight());
+    io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());
 
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

@@ -12,16 +12,23 @@
 #define BIND_EVENT_FN(Func) std::bind(&Func, this, std::placeholders::_1)
 
 
-#if FB_BUILD_DLL
-	#define FABLE_API DLLEXPORT
-	#define CORE_API DLLEXPORT
-	#define APPLICATIONCORE_API DLLEXPORT
-	#define IMGUI_API DLLEXPORT
+#ifdef FB_DYNAMIC_LINK
+	#if FB_BUILD_DLL
+		#define FABLE_API DLLEXPORT
+		#define CORE_API DLLEXPORT
+		#define APPLICATIONCORE_API DLLEXPORT
+		#define IMGUI_API DLLEXPORT
+	#else
+		#define FABLE_API DLLIMPORT
+		#define CORE_API DLLIMPORT
+		#define APPLICATIONCORE_API DLLIMPORT
+		#define IMGUI_API DLLIMPORT
+	#endif
 #else
-	#define FABLE_API DLLIMPORT
-	#define CORE_API DLLIMPORT
-	#define APPLICATIONCORE_API DLLIMPORT
-	#define IMGUI_API DLLIMPORT
+	#define FABLE_API
+	#define CORE_API
+	#define APPLICATIONCORE_API
+	#define IMGUI_API
 #endif
 
 

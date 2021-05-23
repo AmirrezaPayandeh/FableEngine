@@ -2,7 +2,7 @@ project "Glad"
 	location (ProjectsLocation)
 	kind "StaticLib"
 	language "C"
-	staticruntime "On"
+	staticruntime "on"
 
 	targetdir (TargetDir)
 	objdir (ObjDir)
@@ -13,7 +13,7 @@ project "Glad"
 		ProgramsSourceDir .. "Glad/include/KHR/khrplatform.h",
 		ProgramsSourceDir .. "Glad/src/Glad.c"
 	}
-	
+
 	includedirs
 	{
 		"%{IncludeDir.Glad}"
@@ -27,9 +27,5 @@ project "Glad"
 		symbols "on"
 
 	filter "configurations:Release"
-		runtime "Release"
-		optimize "on"
-		
-	filter "configurations:Distribution"
 		runtime "Release"
 		optimize "on"

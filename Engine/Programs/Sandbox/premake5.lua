@@ -2,7 +2,8 @@ project "Sandbox"
 	location (ProjectsLocation)
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "Off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir (TargetDir)
 	objdir (ObjDir)
@@ -27,7 +28,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines
@@ -37,7 +37,7 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 		defines
 		{
 			"FB_DEBUG"
@@ -45,7 +45,7 @@ project "Sandbox"
 
 	filter "configurations:Release"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 		defines
 		{
 			"FB_RELEASE"
@@ -53,7 +53,7 @@ project "Sandbox"
 
 	filter "configurations:Distribution"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 		defines
 		{
 			"FB_DIST"

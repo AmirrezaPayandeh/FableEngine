@@ -2,7 +2,8 @@ project "ImGui"
 	location (ProjectsLocation)
 	kind "StaticLib"
 	language "C++"
-    staticruntime "On"
+	cppdialect "C++17"
+    staticruntime "on"
 
 	targetdir (TargetDir)
 	objdir (ObjDir)
@@ -15,21 +16,15 @@ project "ImGui"
 
 	filter "system:windows"
 		systemversion "latest"
-		cppdialect "C++17"
 
 	filter "system:linux"
-		pic "On"
+		pic "on"
 		systemversion "latest"
-		cppdialect "C++17"
 
 	filter "configurations:Debug"
 		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
-		runtime "Release"
-		optimize "on"
-
-	filter "configurations:Distribution"
 		runtime "Release"
 		optimize "on"

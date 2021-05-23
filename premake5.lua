@@ -1,6 +1,6 @@
 workspace "FableEngine"
 	architecture "x64"
-	platforms { "Win64" }
+	platforms "Win64"
 	startproject "Sandbox"
 
 	configurations

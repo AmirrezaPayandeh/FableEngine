@@ -2,7 +2,7 @@ project "GLFW"
 	location (ProjectsLocation)
 	kind "StaticLib"
 	language "C"
-	staticruntime "On"
+	staticruntime "on"
 
 	targetdir (TargetDir)
 	objdir (ObjDir)
@@ -43,7 +43,7 @@ project "GLFW"
 		}
 
 	filter "system:linux"
-		pic "On"
+		pic "on"
 		systemversion "latest"
 		
 		files
@@ -71,9 +71,5 @@ project "GLFW"
 		symbols "on"
 
 	filter "configurations:Release"
-		runtime "Release"
-		optimize "on"
-		
-	filter "configurations:Distribution"
 		runtime "Release"
 		optimize "on"

@@ -1,8 +1,9 @@
 project "FE"
 	location (ProjectsLocation)
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "Off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir (TargetDir)
 	objdir (ObjDir)
@@ -53,6 +54,11 @@ project "FE"
 		"%{IncludeDir.FableImGui}"
 	}
 
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
+
 	links
 	{
 		"GLFW",
@@ -62,7 +68,6 @@ project "FE"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines
@@ -74,7 +79,7 @@ project "FE"
 
 	filter "configurations:Debug"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 		defines
 		{
 			"FB_DEBUG"
@@ -82,7 +87,7 @@ project "FE"
 
 	filter "configurations:Release"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 		defines
 		{
 			"FB_RELEASE"
@@ -90,7 +95,7 @@ project "FE"
 
 	filter "configurations:Distribution"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 		defines
 		{
 			"FB_DIST"
