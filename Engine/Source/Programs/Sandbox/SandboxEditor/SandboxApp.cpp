@@ -1,5 +1,7 @@
 #include "SandboxApp.h"
 
+#include "imgui.h"
+
 class ExampleLayer : public Fable::Layer
 {
 public:
@@ -8,12 +10,12 @@ public:
 	{
 	}
 
-	void OnUpdate() override
+	virtual void OnUpdate() override
 	{
 		//FB_LOG(App, Info, "ExampleLayer::Update");
 	}
 
-	void OnEvent(Fable::Event& event) override
+	virtual void OnEvent(Fable::Event& event) override
 	{
 		//FB_LOG(App, Trace, "{0}", event);
 	}
@@ -22,7 +24,6 @@ public:
 SandboxApp::SandboxApp()
 {
 	PushLayer(new ExampleLayer());
-	PushOverlay(new Fable::ImGuiLayer());
 }
 
 SandboxApp::~SandboxApp()

@@ -21,7 +21,7 @@ public:
 	LayerVectorIterator end() { return m_Layers.end(); }
 private:
 	LayerVector m_Layers;
-	LayerVectorIterator m_LayerInsert;
+	uint32 m_LayerInsertIndex = 0;
 };
 
 FABLE_NAMESPACE_END

@@ -24,6 +24,10 @@ void Layer::OnUpdate()
 {
 }
 
+void Layer::OnImGuiRender()
+{
+}
+
 void Layer::OnEvent(Event& event)
 {
 }

@@ -6,6 +6,8 @@
 #include "Core/Layer/LayerStack.h"
 #include "Core/Events/ApplicationEvent.h"
 
+#include "ImGui/ImGuiLayer.h"
+
 FABLE_NAMESPACE_BEGIN
 
 class APPLICATIONCORE_API ApplicationCore
@@ -28,6 +30,7 @@ private:
 	bool OnWindowClosed(WindowCloseEvent& e);
 
 	std::unique_ptr<GenericWindow> m_Window;
+	ImGuiLayer* m_ImGuiLayer;
 	bool m_Running = true;
 	LayerStack m_LayerStack;
 };

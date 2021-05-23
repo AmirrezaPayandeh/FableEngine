@@ -15,6 +15,9 @@ ApplicationCore::ApplicationCore()
 
 	m_Window = std::unique_ptr<GenericWindow>(GenericWindow::Create());
 	m_Window->SetEventCallback(BIND_EVENT_FN(ApplicationCore::OnEvent));
+
+	m_ImGuiLayer = new ImGuiLayer();
+	PushOverlay(m_ImGuiLayer);
 }
 
 ApplicationCore::~ApplicationCore()
@@ -29,6 +32,11 @@ void ApplicationCore::Run()
 
 		for (Layer* layer : m_LayerStack)
 			layer->OnUpdate();
+
+		m_ImGuiLayer->Begin();
+		for (Layer* layer : m_LayerStack)
+			layer->OnImGuiRender();
+		m_ImGuiLayer->End();
 
 		m_Window->OnUpdate();
 	}

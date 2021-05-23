@@ -16,6 +16,7 @@ project "Sandbox"
 	{
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.glm}",
+		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.Fable}",
 		"%{IncludeDir.FableCore}"
 	}
