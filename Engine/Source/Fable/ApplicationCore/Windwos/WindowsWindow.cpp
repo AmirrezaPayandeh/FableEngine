@@ -5,8 +5,6 @@
 #include "Core/Events/MouseEvent.h"
 #include "Core/Events/KeyEvent.h"
 
-// TEMPORARY
-#include <Glad/glad.h>
 
 FABLE_NAMESPACE_BEGIN
 
@@ -49,10 +47,9 @@ void WindowsWindow::Init(const WindowProps& props)
 	}
 
 	m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
-	glfwMakeContextCurrent(m_Window);
 
-	int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-	FB_ASSERT(Engine, "Faild to initialize Glad!");
+	m_Context = new OpenGLContext(m_Window);
+	m_Context->Init();
 
 	glfwSetWindowUserPointer(m_Window, &m_Data);
 	SetVSync(true);
@@ -154,7 +151,7 @@ void WindowsWindow::ShutDown()
 void WindowsWindow::OnUpdate()
 {
 	glfwPollEvents();
-	glfwSwapBuffers(m_Window);
+	m_Context->SwapBuffers();
 }
 
 void WindowsWindow::SetVSync(bool enabled)

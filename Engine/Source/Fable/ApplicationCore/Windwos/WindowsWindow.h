@@ -1,8 +1,8 @@
 #pragma once
 
 #include "GenericWindow/GenericWindow.h"
+#include "OpenGL/OpenGLContext.h"
 
-#include <GLFW/glfw3.h>
 
 FABLE_NAMESPACE_BEGIN
 
@@ -28,6 +28,7 @@ private:
 	virtual void ShutDown();
 private:
 	GLFWwindow* m_Window;
+	RendererContext* m_Context;
 
 	struct WindowData
 	{

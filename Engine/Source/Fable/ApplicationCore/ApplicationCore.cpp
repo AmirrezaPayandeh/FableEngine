@@ -28,6 +28,7 @@ void ApplicationCore::Run()
 {
 	while (m_Running)
 	{
+		glClearColor(1, 0, 1, 1);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		for (Layer* layer : m_LayerStack)
@@ -58,13 +59,11 @@ void ApplicationCore::OnEvent(Event& event)
 void ApplicationCore::PushLayer(Layer* layer)
 {
 	m_LayerStack.PushLayer(layer);
-	layer->OnAttach();
 }
 
 void ApplicationCore::PushOverlay(Layer* overlay)
 {
 	m_LayerStack.PushOverlay(overlay);
-	overlay->OnAttach();
 }
 
 bool ApplicationCore::OnWindowClosed(WindowCloseEvent& event)
