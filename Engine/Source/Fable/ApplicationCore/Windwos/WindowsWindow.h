@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GenericWindow/GenericWindow.h"
-#include "OpenGL/OpenGLContext.h"
+#include "OpenGLRenderer/OpenGLContext.h"
 
 
 FABLE_NAMESPACE_BEGIN

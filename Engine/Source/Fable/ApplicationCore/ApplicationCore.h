@@ -7,8 +7,11 @@
 #include "Core/Events/ApplicationEvent.h"
 
 #include "Renderer/Shader.h"
+#include "Renderer/VertexBuffer.h"
+#include "Renderer/IndexBuffer.h"
 
 #include "ImGui/ImGuiLayer.h"
+
 
 FABLE_NAMESPACE_BEGIN
 
@@ -40,8 +43,10 @@ private:
 	LayerStack m_LayerStack;
 	ImGuiLayer* m_ImGuiLayer;
 
-	uint32 m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+	uint32 m_VertexArray;
 	std::unique_ptr<Shader> m_Shader;
+	std::unique_ptr<VertexBuffer> m_VertexBuffer;
+	std::unique_ptr<IndexBuffer> m_IndexBuffer;
 };
 
 // To be defined in CLIENT

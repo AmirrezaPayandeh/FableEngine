@@ -8,7 +8,7 @@
 
 FABLE_NAMESPACE_BEGIN
 
-class APPLICATIONCORE_API OpenGLContext : public RendererContext
+class OPENGLRENDERER_API OpenGLContext : public RendererContext
 {
 public:
 	OpenGLContext(GLFWwindow* windowHandle);
