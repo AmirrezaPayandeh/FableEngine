@@ -9,6 +9,7 @@
 #include "Renderer/Shader.h"
 #include "Renderer/VertexBuffer.h"
 #include "Renderer/IndexBuffer.h"
+#include "Renderer/BufferLayout.h"
 
 #include "ImGui/ImGuiLayer.h"
 
